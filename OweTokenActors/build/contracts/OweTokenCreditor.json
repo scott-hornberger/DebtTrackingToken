@@ -1,0 +1,598 @@
+{
+  "contractName": "OweTokenCreditor",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "numDebtsOwedToContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "claimNextDebt",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x606060405273af42e86cc52fc1ceced626621caf63f24175ee106000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550341561006357600080fd5b610332806100726000396000f30060606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633bf16d8914610051578063a28602d91461007a575b600080fd5b341561005c57600080fd5b61006461008f565b6040518082815260200191505060405180910390f35b341561008557600080fd5b61008d610175565b005b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231306000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b151561015557600080fd5b6102c65a03f1151561016657600080fd5b50505060405180519050905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16632f745c5930600080604051602001526040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b151561024357600080fd5b6102c65a03f1151561025457600080fd5b5050506040518051905090506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166349407a44826040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180828152602001915050600060405180830381600087803b15156102ef57600080fd5b6102c65a03f1151561030057600080fd5b505050505600a165627a7a72305820237baed4e203e60badcfd2fb1fa364db2dbaf63a87e910ad62aa09e8fb4e7baa0029",
+  "deployedBytecode": "0x60606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633bf16d8914610051578063a28602d91461007a575b600080fd5b341561005c57600080fd5b61006461008f565b6040518082815260200191505060405180910390f35b341561008557600080fd5b61008d610175565b005b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231306000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b151561015557600080fd5b6102c65a03f1151561016657600080fd5b50505060405180519050905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16632f745c5930600080604051602001526040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b151561024357600080fd5b6102c65a03f1151561025457600080fd5b5050506040518051905090506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166349407a44826040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180828152602001915050600060405180830381600087803b15156102ef57600080fd5b6102c65a03f1151561030057600080fd5b505050505600a165627a7a72305820237baed4e203e60badcfd2fb1fa364db2dbaf63a87e910ad62aa09e8fb4e7baa0029",
+  "sourceMap": "75:387:12:-;;;153:42;107:94;;;;;;;;;;;;;;;;;;;;75:387;;;;;;;;;;;;;;",
+  "deployedSourceMap": "75:387:12:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;208:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;323:137;;;;;;;;;;;;;;208:109;263:4;286:8;;;;;;;;;;;:18;;;305:4;286:24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;279:31;;208:109;:::o;323:137::-;365:11;379:8;;;;;;;;;;;:28;;;408:4;414:1;379:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;365:51;;426:8;;;;;;;;;;;:19;;;446:6;426:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;323:137;:::o",
+  "source": "pragma solidity ^0.4.17;\n\nimport '../../OweToken/contracts/OweToken.sol';\n\ncontract OweTokenCreditor {\n    OweToken private oweToken = OweToken(\n        0xAF42E86Cc52fC1CeCed626621CAf63f24175EE10\n    );\n\n    function numDebtsOwedToContract() public view returns (uint) {\n        return oweToken.balanceOf(this);\n    }\n\n    function claimNextDebt() public {\n        uint debtId = oweToken.tokenOfOwnerByIndex(this, 0);\n        oweToken.claimEther(debtId);\n    }\n}\n",
+  "sourcePath": "/home/sth/OweTokenSys/OweTokenActors/contracts/OweTokenCreditor.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/home/sth/OweTokenSys/OweTokenActors/contracts/OweTokenCreditor.sol",
+      "exportedSymbols": {
+        "OweTokenCreditor": [
+          1744
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".17"
+          ]
+        },
+        "id": 1708,
+        "name": "PragmaDirective",
+        "src": "0:24:12"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 284,
+          "absolutePath": "/home/sth/OweTokenSys/OweToken/contracts/OweToken.sol",
+          "file": "../../OweToken/contracts/OweToken.sol",
+          "scope": 1745,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 1709,
+        "name": "ImportDirective",
+        "src": "26:47:12"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            1744
+          ],
+          "name": "OweTokenCreditor",
+          "scope": 1745
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "oweToken",
+              "scope": 1744,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract OweToken",
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "OweToken",
+                  "referencedDeclaration": 283,
+                  "type": "contract OweToken"
+                },
+                "id": 1710,
+                "name": "UserDefinedTypeName",
+                "src": "107:8:12"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "isStructConstructorCall": false,
+                  "lValueRequested": false,
+                  "names": [
+                    null
+                  ],
+                  "type": "contract OweToken",
+                  "type_conversion": true
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "overloadedDeclarations": [
+                        null
+                      ],
+                      "referencedDeclaration": 283,
+                      "type": "type(contract OweToken)",
+                      "value": "OweToken"
+                    },
+                    "id": 1711,
+                    "name": "Identifier",
+                    "src": "135:8:12"
+                  },
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "hexvalue": "307841463432453836436335326643314365436564363236363231434166363366323431373545453130",
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "subdenomination": null,
+                      "token": "number",
+                      "type": "address",
+                      "value": "0xAF42E86Cc52fC1CeCed626621CAf63f24175EE10"
+                    },
+                    "id": 1712,
+                    "name": "Literal",
+                    "src": "153:42:12"
+                  }
+                ],
+                "id": 1713,
+                "name": "FunctionCall",
+                "src": "135:66:12"
+              }
+            ],
+            "id": 1714,
+            "name": "VariableDeclaration",
+            "src": "107:94:12"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "numDebtsOwedToContract",
+              "payable": false,
+              "scope": 1744,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1715,
+                "name": "ParameterList",
+                "src": "239:2:12"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 1725,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 1716,
+                        "name": "ElementaryTypeName",
+                        "src": "263:4:12"
+                      }
+                    ],
+                    "id": 1717,
+                    "name": "VariableDeclaration",
+                    "src": "263:4:12"
+                  }
+                ],
+                "id": 1718,
+                "name": "ParameterList",
+                "src": "262:6:12"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 1718
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_contract$_OweTokenCreditor_$1744",
+                                  "typeString": "contract OweTokenCreditor"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "balanceOf",
+                              "referencedDeclaration": 671,
+                              "type": "function (address) view external returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1714,
+                                  "type": "contract OweToken",
+                                  "value": "oweToken"
+                                },
+                                "id": 1719,
+                                "name": "Identifier",
+                                "src": "286:8:12"
+                              }
+                            ],
+                            "id": 1720,
+                            "name": "MemberAccess",
+                            "src": "286:18:12"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1937,
+                              "type": "contract OweTokenCreditor",
+                              "value": "this"
+                            },
+                            "id": 1721,
+                            "name": "Identifier",
+                            "src": "305:4:12"
+                          }
+                        ],
+                        "id": 1722,
+                        "name": "FunctionCall",
+                        "src": "286:24:12"
+                      }
+                    ],
+                    "id": 1723,
+                    "name": "Return",
+                    "src": "279:31:12"
+                  }
+                ],
+                "id": 1724,
+                "name": "Block",
+                "src": "269:48:12"
+              }
+            ],
+            "id": 1725,
+            "name": "FunctionDefinition",
+            "src": "208:109:12"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "claimNextDebt",
+              "payable": false,
+              "scope": 1744,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1726,
+                "name": "ParameterList",
+                "src": "345:2:12"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1727,
+                "name": "ParameterList",
+                "src": "355:0:12"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        1729
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "debtId",
+                          "scope": 1743,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "uint256",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint",
+                              "type": "uint256"
+                            },
+                            "id": 1728,
+                            "name": "ElementaryTypeName",
+                            "src": "365:4:12"
+                          }
+                        ],
+                        "id": 1729,
+                        "name": "VariableDeclaration",
+                        "src": "365:11:12"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_contract$_OweTokenCreditor_$1744",
+                                  "typeString": "contract OweTokenCreditor"
+                                },
+                                {
+                                  "typeIdentifier": "t_rational_0_by_1",
+                                  "typeString": "int_const 0"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "tokenOfOwnerByIndex",
+                              "referencedDeclaration": 1314,
+                              "type": "function (address,uint256) view external returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1714,
+                                  "type": "contract OweToken",
+                                  "value": "oweToken"
+                                },
+                                "id": 1730,
+                                "name": "Identifier",
+                                "src": "379:8:12"
+                              }
+                            ],
+                            "id": 1731,
+                            "name": "MemberAccess",
+                            "src": "379:28:12"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1937,
+                              "type": "contract OweTokenCreditor",
+                              "value": "this"
+                            },
+                            "id": 1732,
+                            "name": "Identifier",
+                            "src": "408:4:12"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "30",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 0",
+                              "value": "0"
+                            },
+                            "id": 1733,
+                            "name": "Literal",
+                            "src": "414:1:12"
+                          }
+                        ],
+                        "id": 1734,
+                        "name": "FunctionCall",
+                        "src": "379:37:12"
+                      }
+                    ],
+                    "id": 1735,
+                    "name": "VariableDeclarationStatement",
+                    "src": "365:51:12"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "claimEther",
+                              "referencedDeclaration": 152,
+                              "type": "function (uint256) external"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1714,
+                                  "type": "contract OweToken",
+                                  "value": "oweToken"
+                                },
+                                "id": 1736,
+                                "name": "Identifier",
+                                "src": "426:8:12"
+                              }
+                            ],
+                            "id": 1738,
+                            "name": "MemberAccess",
+                            "src": "426:19:12"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1729,
+                              "type": "uint256",
+                              "value": "debtId"
+                            },
+                            "id": 1739,
+                            "name": "Identifier",
+                            "src": "446:6:12"
+                          }
+                        ],
+                        "id": 1740,
+                        "name": "FunctionCall",
+                        "src": "426:27:12"
+                      }
+                    ],
+                    "id": 1741,
+                    "name": "ExpressionStatement",
+                    "src": "426:27:12"
+                  }
+                ],
+                "id": 1742,
+                "name": "Block",
+                "src": "355:105:12"
+              }
+            ],
+            "id": 1743,
+            "name": "FunctionDefinition",
+            "src": "323:137:12"
+          }
+        ],
+        "id": 1744,
+        "name": "ContractDefinition",
+        "src": "75:387:12"
+      }
+    ],
+    "id": 1745,
+    "name": "SourceUnit",
+    "src": "0:463:12"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-04-22T02:26:34.735Z"
+}
