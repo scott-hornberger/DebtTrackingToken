@@ -16,6 +16,20 @@
       "type": "function"
     },
     {
+      "constant": true,
+      "inputs": [],
+      "name": "debtOwedToContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "constant": false,
       "inputs": [],
       "name": "claimNextDebt",
@@ -25,18 +39,18 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x606060405273af42e86cc52fc1ceced626621caf63f24175ee106000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550341561006357600080fd5b610332806100726000396000f30060606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633bf16d8914610051578063a28602d91461007a575b600080fd5b341561005c57600080fd5b61006461008f565b6040518082815260200191505060405180910390f35b341561008557600080fd5b61008d610175565b005b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231306000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b151561015557600080fd5b6102c65a03f1151561016657600080fd5b50505060405180519050905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16632f745c5930600080604051602001526040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b151561024357600080fd5b6102c65a03f1151561025457600080fd5b5050506040518051905090506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166349407a44826040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180828152602001915050600060405180830381600087803b15156102ef57600080fd5b6102c65a03f1151561030057600080fd5b505050505600a165627a7a72305820237baed4e203e60badcfd2fb1fa364db2dbaf63a87e910ad62aa09e8fb4e7baa0029",
-  "deployedBytecode": "0x60606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633bf16d8914610051578063a28602d91461007a575b600080fd5b341561005c57600080fd5b61006461008f565b6040518082815260200191505060405180910390f35b341561008557600080fd5b61008d610175565b005b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231306000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b151561015557600080fd5b6102c65a03f1151561016657600080fd5b50505060405180519050905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16632f745c5930600080604051602001526040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b151561024357600080fd5b6102c65a03f1151561025457600080fd5b5050506040518051905090506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166349407a44826040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180828152602001915050600060405180830381600087803b15156102ef57600080fd5b6102c65a03f1151561030057600080fd5b505050505600a165627a7a72305820237baed4e203e60badcfd2fb1fa364db2dbaf63a87e910ad62aa09e8fb4e7baa0029",
-  "sourceMap": "75:387:12:-;;;153:42;107:94;;;;;;;;;;;;;;;;;;;;75:387;;;;;;;;;;;;;;",
-  "deployedSourceMap": "75:387:12:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;208:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;323:137;;;;;;;;;;;;;;208:109;263:4;286:8;;;;;;;;;;;:18;;;305:4;286:24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;279:31;;208:109;:::o;323:137::-;365:11;379:8;;;;;;;;;;;:28;;;408:4;414:1;379:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;365:51;;426:8;;;;;;;;;;;:19;;;446:6;426:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;323:137;:::o",
-  "source": "pragma solidity ^0.4.17;\n\nimport '../../OweToken/contracts/OweToken.sol';\n\ncontract OweTokenCreditor {\n    OweToken private oweToken = OweToken(\n        0xAF42E86Cc52fC1CeCed626621CAf63f24175EE10\n    );\n\n    function numDebtsOwedToContract() public view returns (uint) {\n        return oweToken.balanceOf(this);\n    }\n\n    function claimNextDebt() public {\n        uint debtId = oweToken.tokenOfOwnerByIndex(this, 0);\n        oweToken.claimEther(debtId);\n    }\n}\n",
+  "bytecode": "0x606060405273af42e86cc52fc1ceced626621caf63f24175ee106000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550341561006357600080fd5b610284806100726000396000f300606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633bf16d891461005c578063a28602d914610085578063bd30395f1461009a575b600080fd5b341561006757600080fd5b61006f6100c7565b6040518082815260200191505060405180910390f35b341561009057600080fd5b6100986101ad565b005b34156100a557600080fd5b6100ad610247565b604051808215151515815260200191505060405180910390f35b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231306000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b151561018d57600080fd5b6102c65a03f1151561019e57600080fd5b50505060405180519050905090565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663a28602d96040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401600060405180830381600087803b151561023157600080fd5b6102c65a03f1151561024257600080fd5b505050565b6000806102526100c7565b119050905600a165627a7a7230582030ba7a17118b8f17da1ea1a490e01e53422eca885b222cf0476ab05bf0ea47cc0029",
+  "deployedBytecode": "0x606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633bf16d891461005c578063a28602d914610085578063bd30395f1461009a575b600080fd5b341561006757600080fd5b61006f6100c7565b6040518082815260200191505060405180910390f35b341561009057600080fd5b6100986101ad565b005b34156100a557600080fd5b6100ad610247565b604051808215151515815260200191505060405180910390f35b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231306000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b151561018d57600080fd5b6102c65a03f1151561019e57600080fd5b50505060405180519050905090565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663a28602d96040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401600060405180830381600087803b151561023157600080fd5b6102c65a03f1151561024257600080fd5b505050565b6000806102526100c7565b119050905600a165627a7a7230582030ba7a17118b8f17da1ea1a490e01e53422eca885b222cf0476ab05bf0ea47cc0029",
+  "sourceMap": "52:438:2:-;;;130:42;84:94;;;;;;;;;;;;;;;;;;;;52:438;;;;;;;;;;;;;;",
+  "deployedSourceMap": "52:438:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;185:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;415:73;;;;;;;;;;;;;;300:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;185;240:4;263:8;;;;;;;;;;;:18;;;282:4;263:24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;256:31;;185:109;:::o;415:73::-;457:8;;;;;;;;;;;:22;;;:24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;415:73::o;300:109::-;351:4;401:1;374:24;:22;:24::i;:::-;:28;367:35;;300:109;:::o",
+  "source": "pragma solidity ^0.4.17;\n\nimport './OweToken.sol';\n\ncontract OweTokenCreditor {\n    OweToken private oweToken = OweToken(\n        0xAF42E86Cc52fC1CeCed626621CAf63f24175EE10\n    );\n\n    function numDebtsOwedToContract() public view returns (uint) {\n        return oweToken.balanceOf(this);\n    }\n\n    function debtOwedToContract() public view returns (bool) {\n        return numDebtsOwedToContract() > 0;\n    }\n\n    function claimNextDebt() public {\n        oweToken.claimNextDebt();\n    }\n}\n",
   "sourcePath": "/home/sth/OweTokenSys/OweTokenActors/contracts/OweTokenCreditor.sol",
   "ast": {
     "attributes": {
       "absolutePath": "/home/sth/OweTokenSys/OweTokenActors/contracts/OweTokenCreditor.sol",
       "exportedSymbols": {
         "OweTokenCreditor": [
-          1744
+          363
         ]
       }
     },
@@ -50,24 +64,24 @@
             ".17"
           ]
         },
-        "id": 1708,
+        "id": 325,
         "name": "PragmaDirective",
-        "src": "0:24:12"
+        "src": "0:24:2"
       },
       {
         "attributes": {
-          "SourceUnit": 284,
-          "absolutePath": "/home/sth/OweTokenSys/OweToken/contracts/OweToken.sol",
-          "file": "../../OweToken/contracts/OweToken.sol",
-          "scope": 1745,
+          "SourceUnit": 324,
+          "absolutePath": "/home/sth/OweTokenSys/OweTokenActors/contracts/OweToken.sol",
+          "file": "./OweToken.sol",
+          "scope": 364,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 1709,
+        "id": 326,
         "name": "ImportDirective",
-        "src": "26:47:12"
+        "src": "26:24:2"
       },
       {
         "attributes": {
@@ -81,17 +95,17 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            1744
+            363
           ],
           "name": "OweTokenCreditor",
-          "scope": 1745
+          "scope": 364
         },
         "children": [
           {
             "attributes": {
               "constant": false,
               "name": "oweToken",
-              "scope": 1744,
+              "scope": 363,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "contract OweToken",
@@ -102,12 +116,12 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "OweToken",
-                  "referencedDeclaration": 283,
+                  "referencedDeclaration": 323,
                   "type": "contract OweToken"
                 },
-                "id": 1710,
+                "id": 327,
                 "name": "UserDefinedTypeName",
-                "src": "107:8:12"
+                "src": "84:8:2"
               },
               {
                 "attributes": {
@@ -135,13 +149,13 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 283,
+                      "referencedDeclaration": 323,
                       "type": "type(contract OweToken)",
                       "value": "OweToken"
                     },
-                    "id": 1711,
+                    "id": 328,
                     "name": "Identifier",
-                    "src": "135:8:12"
+                    "src": "112:8:2"
                   },
                   {
                     "attributes": {
@@ -156,19 +170,19 @@
                       "type": "address",
                       "value": "0xAF42E86Cc52fC1CeCed626621CAf63f24175EE10"
                     },
-                    "id": 1712,
+                    "id": 329,
                     "name": "Literal",
-                    "src": "153:42:12"
+                    "src": "130:42:2"
                   }
                 ],
-                "id": 1713,
+                "id": 330,
                 "name": "FunctionCall",
-                "src": "135:66:12"
+                "src": "112:66:2"
               }
             ],
-            "id": 1714,
+            "id": 331,
             "name": "VariableDeclaration",
-            "src": "107:94:12"
+            "src": "84:94:2"
           },
           {
             "attributes": {
@@ -180,7 +194,7 @@
               ],
               "name": "numDebtsOwedToContract",
               "payable": false,
-              "scope": 1744,
+              "scope": 363,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
@@ -193,9 +207,9 @@
                   ]
                 },
                 "children": [],
-                "id": 1715,
+                "id": 332,
                 "name": "ParameterList",
-                "src": "239:2:12"
+                "src": "216:2:2"
               },
               {
                 "children": [
@@ -203,7 +217,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 1725,
+                      "scope": 342,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -216,25 +230,25 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 1716,
+                        "id": 333,
                         "name": "ElementaryTypeName",
-                        "src": "263:4:12"
+                        "src": "240:4:2"
                       }
                     ],
-                    "id": 1717,
+                    "id": 334,
                     "name": "VariableDeclaration",
-                    "src": "263:4:12"
+                    "src": "240:4:2"
                   }
                 ],
-                "id": 1718,
+                "id": 335,
                 "name": "ParameterList",
-                "src": "262:6:12"
+                "src": "239:6:2"
               },
               {
                 "children": [
                   {
                     "attributes": {
-                      "functionReturnParameters": 1718
+                      "functionReturnParameters": 335
                     },
                     "children": [
                       {
@@ -256,7 +270,7 @@
                             "attributes": {
                               "argumentTypes": [
                                 {
-                                  "typeIdentifier": "t_contract$_OweTokenCreditor_$1744",
+                                  "typeIdentifier": "t_contract$_OweTokenCreditor_$363",
                                   "typeString": "contract OweTokenCreditor"
                                 }
                               ],
@@ -265,7 +279,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "balanceOf",
-                              "referencedDeclaration": 671,
+                              "referencedDeclaration": 891,
                               "type": "function (address) view external returns (uint256)"
                             },
                             "children": [
@@ -275,18 +289,18 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1714,
+                                  "referencedDeclaration": 331,
                                   "type": "contract OweToken",
                                   "value": "oweToken"
                                 },
-                                "id": 1719,
+                                "id": 336,
                                 "name": "Identifier",
-                                "src": "286:8:12"
+                                "src": "263:8:2"
                               }
                             ],
-                            "id": 1720,
+                            "id": 337,
                             "name": "MemberAccess",
-                            "src": "286:18:12"
+                            "src": "263:18:2"
                           },
                           {
                             "attributes": {
@@ -294,46 +308,46 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 1937,
+                              "referencedDeclaration": 1827,
                               "type": "contract OweTokenCreditor",
                               "value": "this"
                             },
-                            "id": 1721,
+                            "id": 338,
                             "name": "Identifier",
-                            "src": "305:4:12"
+                            "src": "282:4:2"
                           }
                         ],
-                        "id": 1722,
+                        "id": 339,
                         "name": "FunctionCall",
-                        "src": "286:24:12"
+                        "src": "263:24:2"
                       }
                     ],
-                    "id": 1723,
+                    "id": 340,
                     "name": "Return",
-                    "src": "279:31:12"
+                    "src": "256:31:2"
                   }
                 ],
-                "id": 1724,
+                "id": 341,
                 "name": "Block",
-                "src": "269:48:12"
+                "src": "246:48:2"
               }
             ],
-            "id": 1725,
+            "id": 342,
             "name": "FunctionDefinition",
-            "src": "208:109:12"
+            "src": "185:109:2"
           },
           {
             "attributes": {
-              "constant": false,
+              "constant": true,
               "implemented": true,
               "isConstructor": false,
               "modifiers": [
                 null
               ],
-              "name": "claimNextDebt",
+              "name": "debtOwedToContract",
               "payable": false,
-              "scope": 1744,
-              "stateMutability": "nonpayable",
+              "scope": 363,
+              "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
             },
@@ -345,124 +359,103 @@
                   ]
                 },
                 "children": [],
-                "id": 1726,
+                "id": 343,
                 "name": "ParameterList",
-                "src": "345:2:12"
-              },
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 1727,
-                "name": "ParameterList",
-                "src": "355:0:12"
+                "src": "327:2:2"
               },
               {
                 "children": [
                   {
                     "attributes": {
-                      "assignments": [
-                        1729
-                      ]
+                      "constant": false,
+                      "name": "",
+                      "scope": 353,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
                     },
                     "children": [
                       {
                         "attributes": {
-                          "constant": false,
-                          "name": "debtId",
-                          "scope": 1743,
-                          "stateVariable": false,
-                          "storageLocation": "default",
-                          "type": "uint256",
-                          "value": null,
-                          "visibility": "internal"
+                          "name": "bool",
+                          "type": "bool"
                         },
-                        "children": [
-                          {
-                            "attributes": {
-                              "name": "uint",
-                              "type": "uint256"
-                            },
-                            "id": 1728,
-                            "name": "ElementaryTypeName",
-                            "src": "365:4:12"
-                          }
-                        ],
-                        "id": 1729,
-                        "name": "VariableDeclaration",
-                        "src": "365:11:12"
-                      },
+                        "id": 344,
+                        "name": "ElementaryTypeName",
+                        "src": "351:4:2"
+                      }
+                    ],
+                    "id": 345,
+                    "name": "VariableDeclaration",
+                    "src": "351:4:2"
+                  }
+                ],
+                "id": 346,
+                "name": "ParameterList",
+                "src": "350:6:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 346
+                    },
+                    "children": [
                       {
                         "attributes": {
                           "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
-                          "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
-                          "type": "uint256",
-                          "type_conversion": false
+                          "operator": ">",
+                          "type": "bool"
                         },
                         "children": [
                           {
                             "attributes": {
-                              "argumentTypes": [
-                                {
-                                  "typeIdentifier": "t_contract$_OweTokenCreditor_$1744",
-                                  "typeString": "contract OweTokenCreditor"
-                                },
-                                {
-                                  "typeIdentifier": "t_rational_0_by_1",
-                                  "typeString": "int_const 0"
-                                }
+                              "argumentTypes": null,
+                              "arguments": [
+                                null
                               ],
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
+                              "isStructConstructorCall": false,
                               "lValueRequested": false,
-                              "member_name": "tokenOfOwnerByIndex",
-                              "referencedDeclaration": 1314,
-                              "type": "function (address,uint256) view external returns (uint256)"
+                              "names": [
+                                null
+                              ],
+                              "type": "uint256",
+                              "type_conversion": false
                             },
                             "children": [
                               {
                                 "attributes": {
-                                  "argumentTypes": null,
+                                  "argumentTypes": [
+                                    null
+                                  ],
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1714,
-                                  "type": "contract OweToken",
-                                  "value": "oweToken"
+                                  "referencedDeclaration": 342,
+                                  "type": "function () view returns (uint256)",
+                                  "value": "numDebtsOwedToContract"
                                 },
-                                "id": 1730,
+                                "id": 347,
                                 "name": "Identifier",
-                                "src": "379:8:12"
+                                "src": "374:22:2"
                               }
                             ],
-                            "id": 1731,
-                            "name": "MemberAccess",
-                            "src": "379:28:12"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 1937,
-                              "type": "contract OweTokenCreditor",
-                              "value": "this"
-                            },
-                            "id": 1732,
-                            "name": "Identifier",
-                            "src": "408:4:12"
+                            "id": 348,
+                            "name": "FunctionCall",
+                            "src": "374:24:2"
                           },
                           {
                             "attributes": {
@@ -477,25 +470,78 @@
                               "type": "int_const 0",
                               "value": "0"
                             },
-                            "id": 1733,
+                            "id": 349,
                             "name": "Literal",
-                            "src": "414:1:12"
+                            "src": "401:1:2"
                           }
                         ],
-                        "id": 1734,
-                        "name": "FunctionCall",
-                        "src": "379:37:12"
+                        "id": 350,
+                        "name": "BinaryOperation",
+                        "src": "374:28:2"
                       }
                     ],
-                    "id": 1735,
-                    "name": "VariableDeclarationStatement",
-                    "src": "365:51:12"
-                  },
+                    "id": 351,
+                    "name": "Return",
+                    "src": "367:35:2"
+                  }
+                ],
+                "id": 352,
+                "name": "Block",
+                "src": "357:52:2"
+              }
+            ],
+            "id": 353,
+            "name": "FunctionDefinition",
+            "src": "300:109:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "claimNextDebt",
+              "payable": false,
+              "scope": 363,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 354,
+                "name": "ParameterList",
+                "src": "437:2:2"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 355,
+                "name": "ParameterList",
+                "src": "447:0:2"
+              },
+              {
+                "children": [
                   {
                     "children": [
                       {
                         "attributes": {
                           "argumentTypes": null,
+                          "arguments": [
+                            null
+                          ],
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -511,18 +557,15 @@
                           {
                             "attributes": {
                               "argumentTypes": [
-                                {
-                                  "typeIdentifier": "t_uint256",
-                                  "typeString": "uint256"
-                                }
+                                null
                               ],
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "member_name": "claimEther",
-                              "referencedDeclaration": 152,
-                              "type": "function (uint256) external"
+                              "member_name": "claimNextDebt",
+                              "referencedDeclaration": 178,
+                              "type": "function () external"
                             },
                             "children": [
                               {
@@ -531,62 +574,48 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1714,
+                                  "referencedDeclaration": 331,
                                   "type": "contract OweToken",
                                   "value": "oweToken"
                                 },
-                                "id": 1736,
+                                "id": 356,
                                 "name": "Identifier",
-                                "src": "426:8:12"
+                                "src": "457:8:2"
                               }
                             ],
-                            "id": 1738,
+                            "id": 358,
                             "name": "MemberAccess",
-                            "src": "426:19:12"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 1729,
-                              "type": "uint256",
-                              "value": "debtId"
-                            },
-                            "id": 1739,
-                            "name": "Identifier",
-                            "src": "446:6:12"
+                            "src": "457:22:2"
                           }
                         ],
-                        "id": 1740,
+                        "id": 359,
                         "name": "FunctionCall",
-                        "src": "426:27:12"
+                        "src": "457:24:2"
                       }
                     ],
-                    "id": 1741,
+                    "id": 360,
                     "name": "ExpressionStatement",
-                    "src": "426:27:12"
+                    "src": "457:24:2"
                   }
                 ],
-                "id": 1742,
+                "id": 361,
                 "name": "Block",
-                "src": "355:105:12"
+                "src": "447:41:2"
               }
             ],
-            "id": 1743,
+            "id": 362,
             "name": "FunctionDefinition",
-            "src": "323:137:12"
+            "src": "415:73:2"
           }
         ],
-        "id": 1744,
+        "id": 363,
         "name": "ContractDefinition",
-        "src": "75:387:12"
+        "src": "52:438:2"
       }
     ],
-    "id": 1745,
+    "id": 364,
     "name": "SourceUnit",
-    "src": "0:463:12"
+    "src": "0:491:2"
   },
   "compiler": {
     "name": "solc",
@@ -594,5 +623,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-04-22T02:26:34.735Z"
+  "updatedAt": "2018-04-23T22:14:08.402Z"
 }

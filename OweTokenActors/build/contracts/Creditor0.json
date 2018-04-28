@@ -1,5 +1,5 @@
 {
-  "contractName": "Creditor",
+  "contractName": "Creditor0",
   "abi": [
     {
       "constant": true,
@@ -50,18 +50,18 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x606060405273af42e86cc52fc1ceced626621caf63f24175ee106000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610382806100676000396000f300606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806327f3a72a146100595780633bf16d8914610082578063a28602d9146100ab575b005b341561006457600080fd5b61006c6100c0565b6040518082815260200191505060405180910390f35b341561008d57600080fd5b6100956100df565b6040518082815260200191505060405180910390f35b34156100b657600080fd5b6100be6101c5565b005b60003073ffffffffffffffffffffffffffffffffffffffff1631905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231306000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b15156101a557600080fd5b6102c65a03f115156101b657600080fd5b50505060405180519050905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16632f745c5930600080604051602001526040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b151561029357600080fd5b6102c65a03f115156102a457600080fd5b5050506040518051905090506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166349407a44826040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180828152602001915050600060405180830381600087803b151561033f57600080fd5b6102c65a03f1151561035057600080fd5b505050505600a165627a7a72305820b40dd765187dc6288a68614048575bcb214583f3eaba7ce4d1c771a788cbd7cb0029",
-  "deployedBytecode": "0x606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806327f3a72a146100595780633bf16d8914610082578063a28602d9146100ab575b005b341561006457600080fd5b61006c6100c0565b6040518082815260200191505060405180910390f35b341561008d57600080fd5b6100956100df565b6040518082815260200191505060405180910390f35b34156100b657600080fd5b6100be6101c5565b005b60003073ffffffffffffffffffffffffffffffffffffffff1631905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231306000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b15156101a557600080fd5b6102c65a03f115156101b657600080fd5b50505060405180519050905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16632f745c5930600080604051602001526040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182815260200192505050602060405180830381600087803b151561029357600080fd5b6102c65a03f115156102a457600080fd5b5050506040518051905090506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166349407a44826040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180828152602001915050600060405180830381600087803b151561033f57600080fd5b6102c65a03f1151561035057600080fd5b505050505600a165627a7a72305820b40dd765187dc6288a68614048575bcb214583f3eaba7ce4d1c771a788cbd7cb0029",
-  "sourceMap": "83:224:9:-;;;153:42:11;107:94;;;;;;;;;;;;;;;;;;;;83:224:9;;;;;;",
-  "deployedSourceMap": "83:224:9:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;210:95;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;208:109:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;323:137;;;;;;;;;;;;;;210:95:9;254:4;285;277:21;;;270:28;;210:95;:::o;208:109:11:-;263:4;286:8;;;;;;;;;;;:18;;;305:4;286:24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;279:31;;208:109;:::o;323:137::-;365:11;379:8;;;;;;;;;;;:28;;;408:4;414:1;379:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;365:51;;426:8;;;;;;;;;;;:19;;;446:6;426:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;323:137;:::o",
-  "source": "pragma solidity ^0.4.17;\n\nimport './OweTokenCreditor.sol';\nimport './Debtor.sol';\n\ncontract Creditor is OweTokenCreditor {\n    function Creditor() public payable {}\n\n    function () public payable {\n    }\n\n    function thisBalance() public view returns (uint) {\n        return address(this).balance;\n    }\n}\n",
-  "sourcePath": "/home/sth/OweTokenSys/OweTokenActors/contracts/Creditor.sol",
+  "bytecode": "0x606060405273af42e86cc52fc1ceced626621caf63f24175ee106000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506102c2806100676000396000f300606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806327f3a72a146100595780633bf16d8914610082578063a28602d9146100ab575b005b341561006457600080fd5b61006c6100c0565b6040518082815260200191505060405180910390f35b341561008d57600080fd5b6100956100df565b6040518082815260200191505060405180910390f35b34156100b657600080fd5b6100be6101c5565b005b60003073ffffffffffffffffffffffffffffffffffffffff1631905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231306000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b15156101a557600080fd5b6102c65a03f115156101b657600080fd5b50505060405180519050905090565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663aacd4a98306040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050600060405180830381600087803b151561028057600080fd5b6102c65a03f1151561029157600080fd5b5050505600a165627a7a72305820313316e69790006b7151dc7dbba41d6588208776ad29262d38a8ab378f21b75c0029",
+  "deployedBytecode": "0x606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806327f3a72a146100595780633bf16d8914610082578063a28602d9146100ab575b005b341561006457600080fd5b61006c6100c0565b6040518082815260200191505060405180910390f35b341561008d57600080fd5b6100956100df565b6040518082815260200191505060405180910390f35b34156100b657600080fd5b6100be6101c5565b005b60003073ffffffffffffffffffffffffffffffffffffffff1631905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231306000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b15156101a557600080fd5b6102c65a03f115156101b657600080fd5b50505060405180519050905090565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663aacd4a98306040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050600060405180830381600087803b151561028057600080fd5b6102c65a03f1151561029157600080fd5b5050505600a165627a7a72305820313316e69790006b7151dc7dbba41d6588208776ad29262d38a8ab378f21b75c0029",
+  "sourceMap": "60:226:0:-;;;130:42:7;84:94;;;;;;;;;;;;;;;;;;;;60:226:0;;;;;;",
+  "deployedSourceMap": "60:226:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;189:95;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;185:109:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;300:77;;;;;;;;;;;;;;189:95:0;233:4;264;256:21;;;249:28;;189:95;:::o;185:109:7:-;240:4;263:8;;;;;;;;;;;:18;;;282:4;263:24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;256:31;;185:109;:::o;300:77::-;342:8;;;;;;;;;;;:22;;;365:4;342:28;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;300:77::o",
+  "source": "pragma solidity ^0.4.17;\n\nimport './OweTokenCreditor.sol';\n\ncontract Creditor0 is OweTokenCreditor {\n    function Creditor0() public payable {}\n\n    function () public payable {\n    }\n\n    function thisBalance() public view returns (uint) {\n        return address(this).balance;\n    }\n}\n",
+  "sourcePath": "/home/sth/OweTokenSys/OweTokenActors/contracts/Creditor0.sol",
   "ast": {
     "attributes": {
-      "absolutePath": "/home/sth/OweTokenSys/OweTokenActors/contracts/Creditor.sol",
+      "absolutePath": "/home/sth/OweTokenSys/OweTokenActors/contracts/Creditor0.sol",
       "exportedSymbols": {
-        "Creditor": [
-          1584
+        "Creditor0": [
+          24
         ]
       }
     },
@@ -75,54 +75,39 @@
             ".17"
           ]
         },
-        "id": 1560,
+        "id": 1,
         "name": "PragmaDirective",
-        "src": "0:24:9"
+        "src": "0:24:0"
       },
       {
         "attributes": {
-          "SourceUnit": 1662,
+          "SourceUnit": 503,
           "absolutePath": "/home/sth/OweTokenSys/OweTokenActors/contracts/OweTokenCreditor.sol",
           "file": "./OweTokenCreditor.sol",
-          "scope": 1585,
+          "scope": 25,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 1561,
+        "id": 2,
         "name": "ImportDirective",
-        "src": "26:32:9"
-      },
-      {
-        "attributes": {
-          "SourceUnit": 1624,
-          "absolutePath": "/home/sth/OweTokenSys/OweTokenActors/contracts/Debtor.sol",
-          "file": "./Debtor.sol",
-          "scope": 1585,
-          "symbolAliases": [
-            null
-          ],
-          "unitAlias": ""
-        },
-        "id": 1562,
-        "name": "ImportDirective",
-        "src": "59:22:9"
+        "src": "26:32:0"
       },
       {
         "attributes": {
           "contractDependencies": [
-            1661
+            502
           ],
           "contractKind": "contract",
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            1584,
-            1661
+            24,
+            502
           ],
-          "name": "Creditor",
-          "scope": 1585
+          "name": "Creditor0",
+          "scope": 25
         },
         "children": [
           {
@@ -136,17 +121,17 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "OweTokenCreditor",
-                  "referencedDeclaration": 1661,
+                  "referencedDeclaration": 502,
                   "type": "contract OweTokenCreditor"
                 },
-                "id": 1563,
+                "id": 3,
                 "name": "UserDefinedTypeName",
-                "src": "104:16:9"
+                "src": "82:16:0"
               }
             ],
-            "id": 1564,
+            "id": 4,
             "name": "InheritanceSpecifier",
-            "src": "104:16:9"
+            "src": "82:16:0"
           },
           {
             "attributes": {
@@ -156,9 +141,9 @@
               "modifiers": [
                 null
               ],
-              "name": "Creditor",
+              "name": "Creditor0",
               "payable": true,
-              "scope": 1584,
+              "scope": 24,
               "stateMutability": "payable",
               "superFunction": null,
               "visibility": "public"
@@ -171,9 +156,9 @@
                   ]
                 },
                 "children": [],
-                "id": 1565,
+                "id": 5,
                 "name": "ParameterList",
-                "src": "144:2:9"
+                "src": "123:2:0"
               },
               {
                 "attributes": {
@@ -182,9 +167,9 @@
                   ]
                 },
                 "children": [],
-                "id": 1566,
+                "id": 6,
                 "name": "ParameterList",
-                "src": "162:0:9"
+                "src": "141:0:0"
               },
               {
                 "attributes": {
@@ -193,14 +178,14 @@
                   ]
                 },
                 "children": [],
-                "id": 1567,
+                "id": 7,
                 "name": "Block",
-                "src": "162:2:9"
+                "src": "141:2:0"
               }
             ],
-            "id": 1568,
+            "id": 8,
             "name": "FunctionDefinition",
-            "src": "127:37:9"
+            "src": "105:38:0"
           },
           {
             "attributes": {
@@ -212,7 +197,7 @@
               ],
               "name": "",
               "payable": true,
-              "scope": 1584,
+              "scope": 24,
               "stateMutability": "payable",
               "superFunction": null,
               "visibility": "public"
@@ -225,9 +210,9 @@
                   ]
                 },
                 "children": [],
-                "id": 1569,
+                "id": 9,
                 "name": "ParameterList",
-                "src": "179:2:9"
+                "src": "158:2:0"
               },
               {
                 "attributes": {
@@ -236,9 +221,9 @@
                   ]
                 },
                 "children": [],
-                "id": 1570,
+                "id": 10,
                 "name": "ParameterList",
-                "src": "197:0:9"
+                "src": "176:0:0"
               },
               {
                 "attributes": {
@@ -247,14 +232,14 @@
                   ]
                 },
                 "children": [],
-                "id": 1571,
+                "id": 11,
                 "name": "Block",
-                "src": "197:7:9"
+                "src": "176:7:0"
               }
             ],
-            "id": 1572,
+            "id": 12,
             "name": "FunctionDefinition",
-            "src": "170:34:9"
+            "src": "149:34:0"
           },
           {
             "attributes": {
@@ -266,7 +251,7 @@
               ],
               "name": "thisBalance",
               "payable": false,
-              "scope": 1584,
+              "scope": 24,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
@@ -279,9 +264,9 @@
                   ]
                 },
                 "children": [],
-                "id": 1573,
+                "id": 13,
                 "name": "ParameterList",
-                "src": "230:2:9"
+                "src": "209:2:0"
               },
               {
                 "children": [
@@ -289,7 +274,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 1583,
+                      "scope": 23,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -302,25 +287,25 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 1574,
+                        "id": 14,
                         "name": "ElementaryTypeName",
-                        "src": "254:4:9"
+                        "src": "233:4:0"
                       }
                     ],
-                    "id": 1575,
+                    "id": 15,
                     "name": "VariableDeclaration",
-                    "src": "254:4:9"
+                    "src": "233:4:0"
                   }
                 ],
-                "id": 1576,
+                "id": 16,
                 "name": "ParameterList",
-                "src": "253:6:9"
+                "src": "232:6:0"
               },
               {
                 "children": [
                   {
                     "attributes": {
-                      "functionReturnParameters": 1576
+                      "functionReturnParameters": 16
                     },
                     "children": [
                       {
@@ -354,8 +339,8 @@
                                 "attributes": {
                                   "argumentTypes": [
                                     {
-                                      "typeIdentifier": "t_contract$_Creditor_$1584",
-                                      "typeString": "contract Creditor"
+                                      "typeIdentifier": "t_contract$_Creditor0_$24",
+                                      "typeString": "contract Creditor0"
                                     }
                                   ],
                                   "isConstant": false,
@@ -365,9 +350,9 @@
                                   "type": "type(address)",
                                   "value": "address"
                                 },
-                                "id": 1577,
+                                "id": 17,
                                 "name": "ElementaryTypeNameExpression",
-                                "src": "277:7:9"
+                                "src": "256:7:0"
                               },
                               {
                                 "attributes": {
@@ -375,48 +360,48 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1858,
-                                  "type": "contract Creditor",
+                                  "referencedDeclaration": 1966,
+                                  "type": "contract Creditor0",
                                   "value": "this"
                                 },
-                                "id": 1578,
+                                "id": 18,
                                 "name": "Identifier",
-                                "src": "285:4:9"
+                                "src": "264:4:0"
                               }
                             ],
-                            "id": 1579,
+                            "id": 19,
                             "name": "FunctionCall",
-                            "src": "277:13:9"
+                            "src": "256:13:0"
                           }
                         ],
-                        "id": 1580,
+                        "id": 20,
                         "name": "MemberAccess",
-                        "src": "277:21:9"
+                        "src": "256:21:0"
                       }
                     ],
-                    "id": 1581,
+                    "id": 21,
                     "name": "Return",
-                    "src": "270:28:9"
+                    "src": "249:28:0"
                   }
                 ],
-                "id": 1582,
+                "id": 22,
                 "name": "Block",
-                "src": "260:45:9"
+                "src": "239:45:0"
               }
             ],
-            "id": 1583,
+            "id": 23,
             "name": "FunctionDefinition",
-            "src": "210:95:9"
+            "src": "189:95:0"
           }
         ],
-        "id": 1584,
+        "id": 24,
         "name": "ContractDefinition",
-        "src": "83:224:9"
+        "src": "60:226:0"
       }
     ],
-    "id": 1585,
+    "id": 25,
     "name": "SourceUnit",
-    "src": "0:308:9"
+    "src": "0:287:0"
   },
   "compiler": {
     "name": "solc",
@@ -426,9 +411,9 @@
     "5780": {
       "events": {},
       "links": {},
-      "address": "0xb56ee18dcf603407504fb3db51edacdf76b1d48b"
+      "address": "0xdd122b271dfa4b7b24c7819fdcfa24c33254e026"
     }
   },
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-04-23T16:27:19.208Z"
+  "updatedAt": "2018-04-24T18:57:45.369Z"
 }

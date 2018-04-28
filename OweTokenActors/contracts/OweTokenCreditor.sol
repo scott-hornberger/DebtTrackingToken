@@ -1,6 +1,6 @@
 pragma solidity ^0.4.17;
 
-import '../../OweToken/contracts/OweToken.sol';
+import './OweToken.sol';
 
 contract OweTokenCreditor {
     OweToken private oweToken = OweToken(
@@ -11,8 +11,11 @@ contract OweTokenCreditor {
         return oweToken.balanceOf(this);
     }
 
+    function debtOwedToContract() public view returns (bool) {
+        return numDebtsOwedToContract() > 0;
+    }
+
     function claimNextDebt() public {
-        uint debtId = oweToken.tokenOfOwnerByIndex(this, 0);
-        oweToken.claimEther(debtId);
+        oweToken.claimNextDebt();
     }
 }

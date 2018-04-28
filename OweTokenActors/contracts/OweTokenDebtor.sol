@@ -1,9 +1,9 @@
 pragma solidity ^0.4.17;
 
-import '../../OweToken/contracts/OweToken.sol';
+import './OweToken.sol';
 
 contract OweTokenDebtor {
-    OweToken oweToken = OweToken(
+    OweToken private oweToken = OweToken(
         0xAF42E86Cc52fC1CeCed626621CAf63f24175EE10
     );
 
