@@ -1,0 +1,433 @@
+{
+  "contractName": "Creditor0",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "numDebtsOwedToContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "claimNextDebt",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "debtOwedToContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "constructor"
+    },
+    {
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "thisBalance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x606060405273af42e86cc52fc1ceced626621caf63f24175ee106000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506102d4806100676000396000f300606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806327f3a72a146100645780633bf16d891461008d578063a28602d9146100b6578063bd30395f146100cb575b005b341561006f57600080fd5b6100776100f8565b6040518082815260200191505060405180910390f35b341561009857600080fd5b6100a0610117565b6040518082815260200191505060405180910390f35b34156100c157600080fd5b6100c96101fd565b005b34156100d657600080fd5b6100de610297565b604051808215151515815260200191505060405180910390f35b60003073ffffffffffffffffffffffffffffffffffffffff1631905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231306000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b15156101dd57600080fd5b6102c65a03f115156101ee57600080fd5b50505060405180519050905090565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663a28602d96040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401600060405180830381600087803b151561028157600080fd5b6102c65a03f1151561029257600080fd5b505050565b6000806102a2610117565b119050905600a165627a7a723058205ae0178c66113d8856eba62c0b04df773c4d069bd045c1d0ed76a6ae2cf10ea80029",
+  "deployedBytecode": "0x606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806327f3a72a146100645780633bf16d891461008d578063a28602d9146100b6578063bd30395f146100cb575b005b341561006f57600080fd5b6100776100f8565b6040518082815260200191505060405180910390f35b341561009857600080fd5b6100a0610117565b6040518082815260200191505060405180910390f35b34156100c157600080fd5b6100c96101fd565b005b34156100d657600080fd5b6100de610297565b604051808215151515815260200191505060405180910390f35b60003073ffffffffffffffffffffffffffffffffffffffff1631905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231306000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b15156101dd57600080fd5b6102c65a03f115156101ee57600080fd5b50505060405180519050905090565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663a28602d96040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401600060405180830381600087803b151561028157600080fd5b6102c65a03f1151561029257600080fd5b505050565b6000806102a2610117565b119050905600a165627a7a723058205ae0178c66113d8856eba62c0b04df773c4d069bd045c1d0ed76a6ae2cf10ea80029",
+  "sourceMap": "59:224:4:-;;;158:42:2;91:115;;;;;;;;;;;;;;;;;;;;59:224:4;;;;;;",
+  "deployedSourceMap": "59:224:4:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;186:95;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;213:112:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;446:76;;;;;;;;;;;;;;331:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;186:95:4;230:4;261;253:21;;;246:28;;186:95;:::o;213:112:2:-;268:4;291:11;;;;;;;;;;;:21;;;313:4;291:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;284:34;;213:112;:::o;446:76::-;488:11;;;;;;;;;;;:25;;;:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;446:76::o;331:109::-;382:4;432:1;405:24;:22;:24::i;:::-;:28;398:35;;331:109;:::o",
+  "source": "pragma solidity ^0.4.17;\n\nimport '../PayeeInterface.sol';\n\ncontract Creditor0 is PayeeInterface {\n    function Creditor0() public payable {}\n\n    function () public payable {\n    }\n\n    function thisBalance() public view returns (uint) {\n        return address(this).balance;\n    }\n}\n",
+  "sourcePath": "/home/sth/OweTokenSys/DebtTrackingSys/contracts/examples/Creditor0.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/home/sth/OweTokenSys/DebtTrackingSys/contracts/examples/Creditor0.sol",
+      "exportedSymbols": {
+        "Creditor0": [
+          557
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".17"
+          ]
+        },
+        "id": 534,
+        "name": "PragmaDirective",
+        "src": "0:24:4"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 387,
+          "absolutePath": "/home/sth/OweTokenSys/DebtTrackingSys/contracts/PayeeInterface.sol",
+          "file": "../PayeeInterface.sol",
+          "scope": 558,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 535,
+        "name": "ImportDirective",
+        "src": "26:31:4"
+      },
+      {
+        "attributes": {
+          "contractDependencies": [
+            386
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            557,
+            386
+          ],
+          "name": "Creditor0",
+          "scope": 558
+        },
+        "children": [
+          {
+            "attributes": {
+              "arguments": [
+                null
+              ]
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "PayeeInterface",
+                  "referencedDeclaration": 386,
+                  "type": "contract PayeeInterface"
+                },
+                "id": 536,
+                "name": "UserDefinedTypeName",
+                "src": "81:14:4"
+              }
+            ],
+            "id": 537,
+            "name": "InheritanceSpecifier",
+            "src": "81:14:4"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": true,
+              "modifiers": [
+                null
+              ],
+              "name": "Creditor0",
+              "payable": true,
+              "scope": 557,
+              "stateMutability": "payable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 538,
+                "name": "ParameterList",
+                "src": "120:2:4"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 539,
+                "name": "ParameterList",
+                "src": "138:0:4"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 540,
+                "name": "Block",
+                "src": "138:2:4"
+              }
+            ],
+            "id": 541,
+            "name": "FunctionDefinition",
+            "src": "102:38:4"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "payable": true,
+              "scope": 557,
+              "stateMutability": "payable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 542,
+                "name": "ParameterList",
+                "src": "155:2:4"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 543,
+                "name": "ParameterList",
+                "src": "173:0:4"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 544,
+                "name": "Block",
+                "src": "173:7:4"
+              }
+            ],
+            "id": 545,
+            "name": "FunctionDefinition",
+            "src": "146:34:4"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "thisBalance",
+              "payable": false,
+              "scope": 557,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 546,
+                "name": "ParameterList",
+                "src": "206:2:4"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 556,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 547,
+                        "name": "ElementaryTypeName",
+                        "src": "230:4:4"
+                      }
+                    ],
+                    "id": 548,
+                    "name": "VariableDeclaration",
+                    "src": "230:4:4"
+                  }
+                ],
+                "id": 549,
+                "name": "ParameterList",
+                "src": "229:6:4"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 549
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "balance",
+                          "referencedDeclaration": null,
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "address",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_contract$_Creditor0_$557",
+                                      "typeString": "contract Creditor0"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "type": "type(address)",
+                                  "value": "address"
+                                },
+                                "id": 550,
+                                "name": "ElementaryTypeNameExpression",
+                                "src": "253:7:4"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 2041,
+                                  "type": "contract Creditor0",
+                                  "value": "this"
+                                },
+                                "id": 551,
+                                "name": "Identifier",
+                                "src": "261:4:4"
+                              }
+                            ],
+                            "id": 552,
+                            "name": "FunctionCall",
+                            "src": "253:13:4"
+                          }
+                        ],
+                        "id": 553,
+                        "name": "MemberAccess",
+                        "src": "253:21:4"
+                      }
+                    ],
+                    "id": 554,
+                    "name": "Return",
+                    "src": "246:28:4"
+                  }
+                ],
+                "id": 555,
+                "name": "Block",
+                "src": "236:45:4"
+              }
+            ],
+            "id": 556,
+            "name": "FunctionDefinition",
+            "src": "186:95:4"
+          }
+        ],
+        "id": 557,
+        "name": "ContractDefinition",
+        "src": "59:224:4"
+      }
+    ],
+    "id": 558,
+    "name": "SourceUnit",
+    "src": "0:284:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+  },
+  "networks": {
+    "5780": {
+      "events": {},
+      "links": {},
+      "address": "0xdd122b271dfa4b7b24c7819fdcfa24c33254e026"
+    }
+  },
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-04-28T17:01:21.882Z"
+}

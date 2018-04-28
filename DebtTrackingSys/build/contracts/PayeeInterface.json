@@ -1,0 +1,627 @@
+{
+  "contractName": "PayeeInterface",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "numDebtsOwedToContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "debtOwedToContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "claimNextDebt",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x606060405273af42e86cc52fc1ceced626621caf63f24175ee106000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550341561006357600080fd5b610284806100726000396000f300606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633bf16d891461005c578063a28602d914610085578063bd30395f1461009a575b600080fd5b341561006757600080fd5b61006f6100c7565b6040518082815260200191505060405180910390f35b341561009057600080fd5b6100986101ad565b005b34156100a557600080fd5b6100ad610247565b604051808215151515815260200191505060405180910390f35b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231306000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b151561018d57600080fd5b6102c65a03f1151561019e57600080fd5b50505060405180519050905090565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663a28602d96040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401600060405180830381600087803b151561023157600080fd5b6102c65a03f1151561024257600080fd5b505050565b6000806102526100c7565b119050905600a165627a7a72305820d3c9160c66bc612a84b1f53c2ed141f3a5289b206d8c9d4e050ae2cd587775af0029",
+  "deployedBytecode": "0x606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633bf16d891461005c578063a28602d914610085578063bd30395f1461009a575b600080fd5b341561006757600080fd5b61006f6100c7565b6040518082815260200191505060405180910390f35b341561009057600080fd5b6100986101ad565b005b34156100a557600080fd5b6100ad610247565b604051808215151515815260200191505060405180910390f35b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166370a08231306000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b151561018d57600080fd5b6102c65a03f1151561019e57600080fd5b50505060405180519050905090565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663a28602d96040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401600060405180830381600087803b151561023157600080fd5b6102c65a03f1151561024257600080fd5b505050565b6000806102526100c7565b119050905600a165627a7a72305820d3c9160c66bc612a84b1f53c2ed141f3a5289b206d8c9d4e050ae2cd587775af0029",
+  "sourceMap": "61:463:2:-;;;158:42;91:115;;;;;;;;;;;;;;;;;;;;61:463;;;;;;;;;;;;;;",
+  "deployedSourceMap": "61:463:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;213:112;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;446:76;;;;;;;;;;;;;;331:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;213:112;268:4;291:11;;;;;;;;;;;:21;;;313:4;291:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;284:34;;213:112;:::o;446:76::-;488:11;;;;;;;;;;;:25;;;:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;446:76::o;331:109::-;382:4;432:1;405:24;:22;:24::i;:::-;:28;398:35;;331:109;:::o",
+  "source": "pragma solidity ^0.4.17;\n\nimport './DebtTrackingToken.sol';\n\ncontract PayeeInterface {\n    DebtTrackingToken private debtTracker = DebtTrackingToken(\n        0xAF42E86Cc52fC1CeCed626621CAf63f24175EE10\n    );\n\n    function numDebtsOwedToContract() public view returns (uint) {\n        return debtTracker.balanceOf(this);\n    }\n\n    function debtOwedToContract() public view returns (bool) {\n        return numDebtsOwedToContract() > 0;\n    }\n\n    function claimNextDebt() public {\n        debtTracker.claimNextDebt();\n    }\n}\n",
+  "sourcePath": "/home/sth/OweTokenSys/DebtTrackingSys/contracts/PayeeInterface.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/home/sth/OweTokenSys/DebtTrackingSys/contracts/PayeeInterface.sol",
+      "exportedSymbols": {
+        "PayeeInterface": [
+          386
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".17"
+          ]
+        },
+        "id": 348,
+        "name": "PragmaDirective",
+        "src": "0:24:2"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 290,
+          "absolutePath": "/home/sth/OweTokenSys/DebtTrackingSys/contracts/DebtTrackingToken.sol",
+          "file": "./DebtTrackingToken.sol",
+          "scope": 387,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 349,
+        "name": "ImportDirective",
+        "src": "26:33:2"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            386
+          ],
+          "name": "PayeeInterface",
+          "scope": 387
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "debtTracker",
+              "scope": 386,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract DebtTrackingToken",
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "DebtTrackingToken",
+                  "referencedDeclaration": 289,
+                  "type": "contract DebtTrackingToken"
+                },
+                "id": 350,
+                "name": "UserDefinedTypeName",
+                "src": "91:17:2"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "isStructConstructorCall": false,
+                  "lValueRequested": false,
+                  "names": [
+                    null
+                  ],
+                  "type": "contract DebtTrackingToken",
+                  "type_conversion": true
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "overloadedDeclarations": [
+                        null
+                      ],
+                      "referencedDeclaration": 289,
+                      "type": "type(contract DebtTrackingToken)",
+                      "value": "DebtTrackingToken"
+                    },
+                    "id": 351,
+                    "name": "Identifier",
+                    "src": "131:17:2"
+                  },
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "hexvalue": "307841463432453836436335326643314365436564363236363231434166363366323431373545453130",
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "subdenomination": null,
+                      "token": "number",
+                      "type": "address",
+                      "value": "0xAF42E86Cc52fC1CeCed626621CAf63f24175EE10"
+                    },
+                    "id": 352,
+                    "name": "Literal",
+                    "src": "158:42:2"
+                  }
+                ],
+                "id": 353,
+                "name": "FunctionCall",
+                "src": "131:75:2"
+              }
+            ],
+            "id": 354,
+            "name": "VariableDeclaration",
+            "src": "91:115:2"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "numDebtsOwedToContract",
+              "payable": false,
+              "scope": 386,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 355,
+                "name": "ParameterList",
+                "src": "244:2:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 365,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 356,
+                        "name": "ElementaryTypeName",
+                        "src": "268:4:2"
+                      }
+                    ],
+                    "id": 357,
+                    "name": "VariableDeclaration",
+                    "src": "268:4:2"
+                  }
+                ],
+                "id": 358,
+                "name": "ParameterList",
+                "src": "267:6:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 358
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_contract$_PayeeInterface_$386",
+                                  "typeString": "contract PayeeInterface"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "balanceOf",
+                              "referencedDeclaration": 1103,
+                              "type": "function (address) view external returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 354,
+                                  "type": "contract DebtTrackingToken",
+                                  "value": "debtTracker"
+                                },
+                                "id": 359,
+                                "name": "Identifier",
+                                "src": "291:11:2"
+                              }
+                            ],
+                            "id": 360,
+                            "name": "MemberAccess",
+                            "src": "291:21:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 2039,
+                              "type": "contract PayeeInterface",
+                              "value": "this"
+                            },
+                            "id": 361,
+                            "name": "Identifier",
+                            "src": "313:4:2"
+                          }
+                        ],
+                        "id": 362,
+                        "name": "FunctionCall",
+                        "src": "291:27:2"
+                      }
+                    ],
+                    "id": 363,
+                    "name": "Return",
+                    "src": "284:34:2"
+                  }
+                ],
+                "id": 364,
+                "name": "Block",
+                "src": "274:51:2"
+              }
+            ],
+            "id": 365,
+            "name": "FunctionDefinition",
+            "src": "213:112:2"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "debtOwedToContract",
+              "payable": false,
+              "scope": 386,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 366,
+                "name": "ParameterList",
+                "src": "358:2:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 376,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 367,
+                        "name": "ElementaryTypeName",
+                        "src": "382:4:2"
+                      }
+                    ],
+                    "id": 368,
+                    "name": "VariableDeclaration",
+                    "src": "382:4:2"
+                  }
+                ],
+                "id": 369,
+                "name": "ParameterList",
+                "src": "381:6:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 369
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": ">",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "arguments": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "uint256",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    null
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 365,
+                                  "type": "function () view returns (uint256)",
+                                  "value": "numDebtsOwedToContract"
+                                },
+                                "id": 370,
+                                "name": "Identifier",
+                                "src": "405:22:2"
+                              }
+                            ],
+                            "id": 371,
+                            "name": "FunctionCall",
+                            "src": "405:24:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "30",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 0",
+                              "value": "0"
+                            },
+                            "id": 372,
+                            "name": "Literal",
+                            "src": "432:1:2"
+                          }
+                        ],
+                        "id": 373,
+                        "name": "BinaryOperation",
+                        "src": "405:28:2"
+                      }
+                    ],
+                    "id": 374,
+                    "name": "Return",
+                    "src": "398:35:2"
+                  }
+                ],
+                "id": 375,
+                "name": "Block",
+                "src": "388:52:2"
+              }
+            ],
+            "id": 376,
+            "name": "FunctionDefinition",
+            "src": "331:109:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "claimNextDebt",
+              "payable": false,
+              "scope": 386,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 377,
+                "name": "ParameterList",
+                "src": "468:2:2"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 378,
+                "name": "ParameterList",
+                "src": "478:0:2"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            null
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "claimNextDebt",
+                              "referencedDeclaration": 144,
+                              "type": "function () external"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 354,
+                                  "type": "contract DebtTrackingToken",
+                                  "value": "debtTracker"
+                                },
+                                "id": 379,
+                                "name": "Identifier",
+                                "src": "488:11:2"
+                              }
+                            ],
+                            "id": 381,
+                            "name": "MemberAccess",
+                            "src": "488:25:2"
+                          }
+                        ],
+                        "id": 382,
+                        "name": "FunctionCall",
+                        "src": "488:27:2"
+                      }
+                    ],
+                    "id": 383,
+                    "name": "ExpressionStatement",
+                    "src": "488:27:2"
+                  }
+                ],
+                "id": 384,
+                "name": "Block",
+                "src": "478:44:2"
+              }
+            ],
+            "id": 385,
+            "name": "FunctionDefinition",
+            "src": "446:76:2"
+          }
+        ],
+        "id": 386,
+        "name": "ContractDefinition",
+        "src": "61:463:2"
+      }
+    ],
+    "id": 387,
+    "name": "SourceUnit",
+    "src": "0:525:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-04-28T17:01:21.880Z"
+}

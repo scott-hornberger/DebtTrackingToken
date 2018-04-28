@@ -31,7 +31,7 @@ contract DebtTrackingToken is ERC721Token {
         require(balanceOf(_payee) > 0);
         uint debtId = tokenOfOwnerByIndex(_payee, 0);
         address debtorAddr = debts[debtId].debtor;
-        OweTokenDebtor debtor = OweTokenDebtor(debtorAddr);
+        Payer debtor = Payer(debtorAddr);
         debtor.withdrawFor(_payee);
     }
 
